@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CRO Audit",
+  "version": "1.0.0",
+  "description": "Professional CRO audit for landing pages using LIFT Model framework",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "ui/index.html",
+    "default_title": "CRO Audit"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
